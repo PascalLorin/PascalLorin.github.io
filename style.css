@@ -1,25 +1,22 @@
 /* taille maxi d'affichage du site  */
+
 html {
   font-size: 62.5%;
 }
 
 body {
-  font-size: 1.8rem;
-}
-
-/*** Affiche le site si la taille de l'écran est suffisante  ***/
-.changez-orientation {
-  display: none;
-}
-
-.site-container {
+  width: 100%;
+  max-width: 1920px;
   display: flex;
+  flex-flow: column;
+  font-size: 1.8rem;
+  margin: auto;
+  color: #000;
 }
-
 
 .titre-p {
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 2.6rem;
 }
 
 .titre-2 {
@@ -32,7 +29,8 @@ body {
   font-size: 2.0rem;
 }
 
-/* charte des couleurs du site, hormis blanc  */
+/* charte des couleurs du site */
+
 .bleuclair {
   background-color: #deebff
 }
@@ -78,15 +76,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'raleway', serif, sans-serif;
-}
-
-.site-container {
-  width: 100%;
-  max-width: 1920px;
-  display: flex;
-  flex-flow: column;
-  margin: auto;
-  color: #000;
 }
 
 /*  Apparence des liens   */
@@ -141,22 +130,35 @@ a:focus {
 .navbar-i {
   height: inherit;
   text-align: center;
+  justify-content: center;
   border-top: 0.3rem solid transparent;
   border-bottom: 0.3rem solid transparent;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
+/*
 .navbar-h {
   border-bottom: 0.3rem solid #0065fc;
 }
+*/
 
 .navbar-i {
   font-weight: bold;
-  text-align:right;
+  text-align: right;
   padding-right: 4rem;
   position: relative;
-/*  bottom: 2rem;  */
+}
+
+.navbar-h:hover,
+.navbar-a:hover {
+  border-bottom: 0.3rem solid #0065fc;
+  color: #0065fc;
+}
+
+.navbar-i:hover {
+  border-bottom: 0.3rem solid #0065fc;
+  color: #000;
 }
 
 /****  bandeau d'accroche             ***/
@@ -226,7 +228,7 @@ a:focus {
 .search-ico:hover,
 .btn-recherche:hover {
   color: #000;
-  background-color:#deebff;
+  background-color: #deebff;
 }
 
 .recherche {
@@ -448,7 +450,7 @@ section {
 
 .heb-photo {
   object-fit: cover;
-  height: 62%;
+  height: 60%;
   width: 100%;
   border-radius: 1.8rem 1.8rem 0 0;
 }
@@ -555,35 +557,16 @@ footer {
 
 
 /* Tout petits écrans   XS                 */
-/* Demande de basculer en mode paysage     */
+/* Réduit la taille d'affichage            */
 
+@media screen and (max-width: 423px) {
 
-@media screen and (max-width: 423px) and (orientation: portrait) {
-
-  .changez-orientation {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    border: 3px solid blue;
+  .pop-details {
+    height: 22rem;
   }
 
-  .changez-orientation span {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .changez-orientation h1 {
-    text-align:center;
-    color: red;
-  }
-
-  .changez-orientation p {
-    padding: 1rem;
-    color: green;
-  }
-
-  .site-container {
-    display: none;
+  .heb-details {
+    height: 36rem;
   }
 }
 
@@ -594,58 +577,12 @@ footer {
 
 @media screen and (min-width: 424px) and (max-width: 767px) {
 
-  body {
-    font-size: 1.6rem;
-
-  }
-
-  .titre-p {
-    font-weight: 900;
-    font-size: 2.4rem;
-  }
-
-  .titre-2 {
-    font-weight: 400;
-    font-size: 1.8rem;
-  }
-
-  .titre-m {
-    font-weight: 600;
-    font-size: 2.0rem;
-  }
-
-  h2 {
-    font-weight: 900;
-    font-size: 1.4rem;
-  }
-
-  /* Affiche le bouton Rechercher et plus l'icône   */
-  .search-ico {
-    display: block;
-  }
-
-  .btn-recherche {
-    display: none;
-  }
-
   .pop-details {
     height: 22rem;
   }
 
   .heb-details {
-    height: 30rem;
-  }
-
-  .activites {
-    display: grid;
-  }
-
-  .footer {
-    flex-direction: row;
-  }
-
-  .fmenu {
-    width: 100%;
+    height: 32rem;
   }
 }
 
@@ -656,37 +593,11 @@ footer {
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
-  body {
-    font-size: 1.6rem;
-
-  }
-
-  .titre-p {
-    font-weight: 900;
-    font-size: 2.4rem;
-  }
-
-  .titre-2 {
-    font-weight: 400;
-    font-size: 1.8rem;
-  }
-
-  .titre-m {
-    font-weight: 600;
-    font-size: 2.0rem;
-  }
-
-  h2 {
-    font-weight: 900;
-    font-size: 1.4rem;
-  }
-
   /*****  Change l'aspect du menu   *****/
   header {
     display: -webkit-flex;
-    height: 6rem;
+    height: 5rem;
     justify-content: space-between;
-    align-items: center;
   }
 
   .logo {
@@ -701,15 +612,30 @@ footer {
   .navbar a {
     width: 33%;
     display: block;
-  }
-
-  .navbar-h {
-    border-bottom: 0.3rem solid #fff;
-    border-top: 0.3rem solid #0065fc;
-  }
+    }
 
   .navbar-i {
     bottom: 0rem;
+  }
+
+  .navbar-h,
+  .navbar-a,
+  .navbar-i {
+    border-top: 0.3rem solid transparent;
+    border-bottom: 0.3rem solid transparent;
+  }
+
+  .navbar-h:hover,
+  .navbar-a:hover {
+    border-top: 0.3rem solid #0065fc;
+    border-bottom: 0.3rem solid transparent;
+    color: #0065fc;
+  }
+
+  .navbar-i:hover {
+    border-top: 0.3rem solid #0065fc;
+    border-bottom: 0.3rem solid transparent;
+    color: #000;
   }
 
   /* Affiche le bouton Rechercher et plus l'icône   */
@@ -728,10 +654,12 @@ footer {
   }
 
   section {
+    margin-right: 2rem;
     width: 50%;
   }
 
   aside {
+    margin-left: 2rem;
     width: 50%;
   }
 
@@ -875,13 +803,28 @@ footer {
     display: block;
   }
 
-  .navbar-h {
-    border-bottom: 0.3rem solid #fff;
-    border-top: 0.3rem solid #0065fc;
+  .navbar-h,
+  .navbar-a,
+  .navbar-i {
+    border-top: 0.3rem solid transparent;
+    border-bottom: 0.3rem solid transparent;
   }
 
   .navbar-i {
     bottom: 0rem;
+  }
+
+  .navbar-h:hover,
+  .navbar-a:hover {
+    border-top: 0.3rem solid #0065fc;
+    border-bottom: 0.3rem solid transparent;
+    color: #0065fc;
+  }
+
+  .navbar-i:hover {
+    border-top: 0.3rem solid #0065fc;
+    border-bottom: 0.3rem solid transparent;
+    color: #000;
   }
 
   .search-ico {
@@ -904,10 +847,12 @@ footer {
   }
 
   section {
+    margin-right: 2rem;
     width: 63%;
   }
 
   aside {
+    margin-left: 2rem;
     width: 37%;
   }
 
@@ -1056,14 +1001,30 @@ footer {
     display: block;
   }
 
-  .navbar-h {
-    border-bottom: 0.3rem solid #fff;
-    border-top: 0.3rem solid #0065fc;
-  }
-
   .navbar-i {
     bottom: 0rem;
   }
+
+  .navbar-h,
+  .navbar-a,
+  .navbar-i {
+    border-top: 0.3rem solid transparent;
+    border-bottom: 0.3rem solid transparent;
+  }
+
+  .navbar-h:hover,
+  .navbar-a:hover {
+    border-top: 0.3rem solid #0065fc;
+    border-bottom: 0.3rem solid transparent;
+    color: #0065fc;
+  }
+
+  .navbar-i:hover {
+    border-top: 0.3rem solid #0065fc;
+    border-bottom: 0.3rem solid transparent;
+    color: #000;
+  }
+
 
   /*  recherche ville  */
   .search-ico {
@@ -1081,10 +1042,12 @@ footer {
   }
 
   section {
+    margin-right: 2rem;
     width: 73%;
   }
 
   aside {
+    margin-left: 2rem;
     width: 27%;
   }
 

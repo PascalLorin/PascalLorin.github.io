@@ -1,4 +1,4 @@
-/* taille maxi d'affichage du site  */
+/* Généralités d'affichage du site  */
 
 html {
   font-size: 62.5%;
@@ -14,19 +14,11 @@ body {
   color: #000;
 }
 
-.titre-p {
-  font-weight: 900;
-  font-size: 2.6rem;
-}
-
-.titre-2 {
-  font-weight: 400;
-  font-size: 2.1rem;
-}
-
-.titre-m {
-  font-weight: 600;
-  font-size: 2.0rem;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'raleway', serif, sans-serif;
 }
 
 /* charte des couleurs du site */
@@ -71,14 +63,23 @@ body {
   color: #555
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: 'raleway', serif, sans-serif;
+/* Taille des polices des affichages */
+.titre-p {
+  font-weight: 800;
+  font-size: 2.4rem;
 }
 
-/*  Apparence des liens   */
+.titre-2 {
+  font-weight: 400;
+  font-size: 2.0rem;
+}
+
+.titre-m {
+  font-weight: 600;
+  font-size: 2.0rem;
+}
+
+/*  Apparence générale des liens et du curseur  */
 ul {
   list-style-type: none;
   padding: 0;
@@ -97,20 +98,18 @@ a:focus {
   cursor: pointer;
 }
 
-
 /****   HEADER                      ***/
 /****   affichage logo site         ***/
 /****   main menu                   ***/
-/****   bande d'accroche            ***/
-#header {
-  height: 6rem;
-  margin-bottom: 3rem;
+
+.header {
+  height: auto;
 }
 
 .logo {
   position: absolute;
-  width: 7rem;
-  margin: 0.3rem;
+  width: 10rem;
+  margin-left:2rem;
 }
 
 .navbar {
@@ -133,15 +132,9 @@ a:focus {
   justify-content: center;
   border-top: 0.3rem solid transparent;
   border-bottom: 0.3rem solid transparent;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
-
-/*
-.navbar-h {
-  border-bottom: 0.3rem solid #0065fc;
-}
-*/
 
 .navbar-i {
   font-weight: bold;
@@ -164,6 +157,7 @@ a:focus {
 /****  bandeau d'accroche             ***/
 
 .accroche {
+  margin-top: 2rem;
   margin-bottom: 3rem;
 }
 
